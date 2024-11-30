@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <style>
+    @keyframes gradientFlow {
+      0% { stop-color: #4a90e2; }
+      50% { stop-color: #5cb85c; }
+      100% { stop-color: #4a90e2; }
+    }
+    @keyframes writeLines {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .gradient-text {
+      fill: url(#text-gradient);
+    }
+    .book-line {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: writeLines 3s linear forwards;
+    }
+    #gradient-stop-1, #gradient-stop-2 {
+      animation: gradientFlow 6s linear infinite;
+    }
+  </style>
+  
+  <defs>
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop id="gradient-stop-1" offset="0%" stop-color="#4a90e2" />
+      <stop id="gradient-stop-2" offset="100%" stop-color="#5cb85c" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Book icon -->
+  <g transform="translate(10, 25)">
+    <path d="M10 0 L70 0 L70 50 L10 50 Z" fill="#f8f9fa" stroke="#333" stroke-width="2" />
+    <path class="book-line" d="M15 10 L65 10" stroke="#333" stroke-width="2" />
+    <path class="book-line" d="M15 20 L65 20" stroke="#333" stroke-width="2" />
+    <path class="book-line" d="M15 30 L65 30" stroke="#333" stroke-width="2" />
+    <path class="book-line" d="M15 40 L50 40" stroke="#333" stroke-width="2" />
+  </g>
+  
+  <!-- Company name -->
+  <text x="90" y="60" font-family="Arial, sans-serif" font-size="40" font-weight="bold" class="gradient-text">Learnify</text>
+</svg>
